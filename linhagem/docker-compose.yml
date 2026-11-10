@@ -1,0 +1,21 @@
+services:
+  db:
+    image: postgres:17
+    container_name: linhagem-postgres
+    environment:
+      POSTGRES_USER: linhagem
+      POSTGRES_PASSWORD: linhagem
+      POSTGRES_DB: linhagem
+    ports:
+      - "127.0.0.1:5433:5432"
+    volumes:
+      - linhagem_pgdata:/var/lib/postgresql/data
+      - ./db:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U linhagem -d linhagem"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+
+volumes:
+  linhagem_pgdata:

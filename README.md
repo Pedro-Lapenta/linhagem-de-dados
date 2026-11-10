@@ -20,3 +20,8 @@ dados ou instalação de pacotes.
 
 O gerador está em `scripts/build_portal.py`. Ele usa o documento-fonte e a taxonomia
 editorial local indicada no início do script.
+
+## Linhagem de Dados (parte prática)
+
+A pasta [`linhagem/`](linhagem/README.md) contém uma aplicação com interface que implementa o Módulo 11
+e precisa de PostgreSQL, API e front-end. O portal estático continua independente dela.
